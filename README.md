@@ -34,3 +34,11 @@ What if the new consumer was in a separate module or even a microservice? How co
 - No Nulls
 - No Primitives
 - Selfvalidating Objects (Must not be possible to create invalid Books, e.g. missing title, missing or invalid ISBN)
+
+## Links for further inspiration (Theory, Patterns, Principles)
+
+- [Nullable Infrastructure](https://www.jamesshore.com/v2/blog/2018/testing-without-mocks#nullable-infrastructure)
+- [Abstract Contract Test](https://blog.thecodewhisperer.com/permalink/writing-contract-tests-in-java-differently)
+- [Repository Pattern](https://martinfowler.com/eaaCatalog/repository.html)
+- [Dependency Inversion Principle](https://en.wikipedia.org/wiki/Dependency_inversion_principle)
+- [Interface Segregation Principle](https://en.wikipedia.org/wiki/Interface_segregation_principle)
