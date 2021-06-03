@@ -5,7 +5,7 @@ The motivation of this Kata is to practice the testing of code that is at the ou
 In terms of the [Hexagonal Architecture](https://alistair.cockburn.us/hexagonal-architecture/) this would be a port/adapter on the "driven" side.
 
 ## Initial Requirements
-You are implementing a system that handles the persistence of a BookShelve.
+You are implementing a system that utilizes the persistence of a BookShelve.
 
 1. The BookShelve starts empty.
 2. The system can add a book to the BookShelve, a book consists of an ISBN and a title.
