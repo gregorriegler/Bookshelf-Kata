@@ -15,7 +15,7 @@ You are implementing a system that handles the persistence of a BookShelve.
 ### Things to think about
 How could we design this so that it allows us to write fast unit tests in our application that don't hit the database?
 What are the alternatives to a mock, and what are their advantages/disadvantages?
-How can we make sure to be able to change the database in the future with minimal effort - can we reuse the tests for that?
+How can we make sure to be able to change the database in the future with minimal effort, and can we reuse the tests for that?
 
 ## Further Requirements
 A new consumer of the BookShelve implementation is added.
