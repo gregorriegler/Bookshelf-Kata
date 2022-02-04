@@ -1,5 +1,9 @@
 package db;
 
+/**
+ * This is an external library you don't own.
+ * You are not allowed to change it.
+ */
 public class DbFactory {
 
     private static final DbFactory instance = new DbFactory();

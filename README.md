@@ -1,46 +1,51 @@
 # BookShelve Kata
 
-## Motivation
-The motivation of this Kata is to practice the testing of code that is at the outgoing side of the boundary of an application, like persistence.
-In terms of the [Hexagonal Architecture](https://alistair.cockburn.us/hexagonal-architecture/) this would be a port/adapter on the "driven" side.
+## Introduction
+This purpose of this kata is to practice to deal with expensive and hard to test infrastructure at the outgoing side of an application (in this example, a database).
 
-## Initial Requirements
-You are implementing a system that utilizes the persistence of a BookShelve.
+## Challenges
+How could we develop this using mostly fast unit tests?
+Do we have to use mocks in this case? What are the alternatives?
+How can we make sure that we can easily replace the database in the future, and can we reuse our tests for that?
+How do we properly separate code that is hard to test from code that is easy to test?
+And how do we design our tests, so that they assist future refactorings?
 
-1. The BookShelve starts empty.
-2. The system can add a book to the BookShelve, a book consists of an ISBN and a title.
-3. It can find a book by its ISBN.
-4. It can grab a list of all books that have been added to the shelve.
+---
 
-### Things to think about
-How could we design this so that it allows us to write fast unit tests in our application that don't hit the database?
-What are the alternatives to a mock, and what are their advantages/disadvantages?
-How can we make sure to be able to change the database in the future with minimal effort, and can we reuse the tests for that?
+Follow the steps one by one, do not read ahead.
 
-## Further Requirements
-A new consumer of the BookShelve implementation is added.
-It's job is to find and remove books from the shelve that have "bad" names.
-This new subsystem needs the following features from the BookShelve implementation.
+### Step 1 
+There is a database library in the `db` package called `Db` and you don't own it, so you are not allowed to change it either.
+Program a book shelve that can create and store books that uses the given database for it.
+For now, books should only have a title.
+It is not necessary to create a UI, CLI or any other complicated API for this. 
+A simple service class/module/function will do.
 
-1. It can find books whose title contains a given "bad" word.
-2. It can remove a book from the shelve by providing its ISBN.
+### Step 2
+We would like to be able to skim the books we have added so far. 
+Add a feature that allows us to retrieve books that were stored in the book shelve.
 
-### Things to think about
-What does the new consumer need to know about the BookShelve, and what doesn't it need to know?
-What if the new consumer was in a separate module or even a microservice? How could we structure our code and its dependencies in this case?
+### Step 3
+Lets add more spice to the book shelve.
+Mark every 10th book you add as an anniversary book.
 
-## Ideas for Constraints
+### Step 4
+We really love our book shelve so far. We added so many books, we would like to celebrate that.
+Therefor, every 25th book we add should be marked as a golden anniversary book.
 
-- No Nulls
-- No Primitives
-- Selfvalidating Objects (Must not be possible to create invalid Books, e.g. missing title, missing or invalid ISBN)
+### Step 5
+A new version of `Db` came out. It is much faster, but they renamed the persist function.
+And it has a new feature where you can get the count of stored objects.
+This should help with the anniversary features.
+Migrate to the new version, it's located in the `db2` package.
+
 
 ## Links for further inspiration (Theory, Patterns, Principles)
 
 - [Repository Pattern](https://martinfowler.com/eaaCatalog/repository.html)
+- [Fake](https://martinfowler.com/bliki/TestDouble.html)
+- [Logic Sandwich](http://www.jamesshore.com/v2/blog/2018/testing-without-mocks#logic-sandwich)
 - [Dependency Inversion Principle](https://en.wikipedia.org/wiki/Dependency_inversion_principle)
-- [Interface Segregation Principle](https://en.wikipedia.org/wiki/Interface_segregation_principle)
-- [Liskov Substitution Principle](https://en.wikipedia.org/wiki/Liskov_substitution_principle)
-- [Nullable Infrastructure](https://www.jamesshore.com/v2/blog/2018/testing-without-mocks#nullable-infrastructure)
 - [Abstract Contract Test](https://blog.thecodewhisperer.com/permalink/writing-contract-tests-in-java-differently)
 - [Abstract Test Cases, 20 Years later](https://blog.thecodewhisperer.com/permalink/abstract-test-cases-20-years-later)
+- [Hexagonal Architecture](https://alistair.cockburn.us/hexagonal-architecture/)

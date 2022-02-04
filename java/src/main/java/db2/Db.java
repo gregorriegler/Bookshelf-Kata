@@ -1,4 +1,4 @@
-package db;
+package db2;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,18 +10,23 @@ import java.util.List;
 public class Db<T> {
     private final List<T> objects = new ArrayList<>();
 
-    Db() {
-        sleepSilently(7000);
+    public Db() {
+        sleepSilently(2000);
     }
 
-    public void persist(T object) {
-        sleepSilently(3000);
+    public void save(T object) {
+        sleepSilently(500);
         objects.add(object);
     }
 
     public List<T> findAll() {
-        sleepSilently(3000);
+        sleepSilently(500);
         return objects;
+    }
+
+    public int count() {
+        sleepSilently(500);
+        return objects.size();
     }
 
     public void clear() {
