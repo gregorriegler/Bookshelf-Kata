@@ -23,7 +23,7 @@ A simple service class/module/function will do.
 
 ### Step 2
 We would like to be able to skim the books we have added so far. 
-Add a feature that allows us to retrieve books that were stored in the book shelve.
+Add a feature that allows us to retrieve all books that were stored in the book shelve.
 
 ### Step 3
 Lets add more spice to the book shelve.
