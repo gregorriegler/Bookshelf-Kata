@@ -12,7 +12,7 @@ This purpose of this kata is to practice to deal with expensive and hard to test
 
 ---
 
-Follow the steps one by one, do not read ahead.
+Follow the steps one by one and do not read ahead.
 
 ### Step 1 
 There is a database library in the `db` package called `Db` and you don't own it, so you are not allowed to change it either.
