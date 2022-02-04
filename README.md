@@ -6,7 +6,7 @@ This purpose of this kata is to practice to deal with expensive and hard to test
 ## Challenges
 - How could we develop this using mostly fast unit tests?
 - Do we have to use mocks in this case? What are the alternatives?
-- How can we make sure that we can easily replace the database in the future, and can we reuse our tests for that?
+- Can we make sure that we can easily replace the database in the future, and have our tests assist that?
 - How do we properly separate code that is hard to test from code that is easy to test?
 - And how do we design our tests, so that they assist future refactorings?
 
