@@ -34,7 +34,7 @@ We really love our book shelve so far. We added so many books, we would like to 
 Therefor, every 25th book we add should be marked as a golden anniversary book.
 
 ### Step 5
-A new version of `Db` came out. It is much faster, but they renamed the persist function.
+A new version of `Db` came out. It's much faster, but they renamed the persist function.
 And it has a new feature where you can get the count of stored objects.
 This should help with the anniversary features.
 Migrate to the new version, it's located in the `db2` package.
