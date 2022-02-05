@@ -31,7 +31,7 @@ Mark every 10th book you add as an anniversary book.
 
 ### Step 4
 We really love our Bookshelf so far. We added so many books, we would like to celebrate that.
-Therefor, every 25th book we add should be marked as a golden anniversary book.
+Therefore, every 25th book we add should be marked as a golden anniversary book.
 
 ### Step 5
 A new version of `Db` came out. It's much faster, but they renamed the persist function.
