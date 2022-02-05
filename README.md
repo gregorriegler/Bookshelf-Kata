@@ -16,6 +16,7 @@ Follow the steps one by one and do not read ahead.
 
 ### Step 1 
 There is a database library in the `db` package called `Db` and you don't own it, so you are not allowed to change it either.
+And it is annoyingly slow!
 Program a Bookshelf that can create and store books and use the given database for it.
 For now, books should only have a title.
 It is not necessary to create a UI, CLI, or any other complicated API for this. 
