@@ -32,9 +32,6 @@ class Db {
     clear() {
         this.objects = [];
     }
-
-
-
 }
 
 function sleep(milliseconds) {

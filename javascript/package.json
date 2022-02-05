@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --require babel-core/register --require test-setup.js --require babel-polyfill",
-    "test:watch": "npm run test -- -R min --watch"
+    "test:watch": "npm run test -- --watch -R min"
   },
   "keywords": [],
   "author": "",
