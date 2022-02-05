@@ -1,5 +1,5 @@
 ﻿namespace BookShelve;
-public class Class1
+public class BookShelve
 {
 
 }

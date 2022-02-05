@@ -3,14 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 
-namespace BookShelve.Tests
+namespace BookShelve.Db
 {
-    internal class DbFactory
+    public class DbFactory
     {
-
         private static DbFactory instance = new DbFactory();
 
-        internal static DbFactory getInstance()
+        public static DbFactory getInstance()
         {
             return instance;
         }
@@ -33,19 +32,19 @@ namespace BookShelve.Tests
                 Thread.Sleep(7000);
             }
 
-            internal void persist(T persistable)
+            public void persist(T persistable)
             {
                 Thread.Sleep(3000);
                 objects.Add(persistable);
             }
 
-            internal List<T> findAll()
+            public List<T> findAll()
             {
                 Thread.Sleep(3000);
                 return objects;
             }
 
-            internal void clear()
+            public void clear()
             {
                 objects.Clear();
             }
