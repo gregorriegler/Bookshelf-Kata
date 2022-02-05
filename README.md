@@ -1,7 +1,7 @@
 # Bookshelf Kata
 
 ## Introduction
-This purpose of this kata is to practice to deal with expensive and hard to test infrastructure at the outgoing side of an application (in this example, a database).
+The purpose of this kata is to practice dealing with expensive and hard-to-test infrastructure at the outgoing side of an application (in this example, a database).
 
 ## Challenges
 - How could we develop this using mostly fast unit tests?
