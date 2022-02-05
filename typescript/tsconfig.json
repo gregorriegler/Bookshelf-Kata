@@ -1,0 +1,27 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    // see https://www.typescriptlang.org/docs/handbook/compiler-options.html
+    "target": "es5",
+    "lib": [
+      "esnext"
+    ],
+    "module": "commonjs",
+    "sourceMap": true,
+    "outDir": "./dist/",
+    "noEmitOnError": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "forceConsistentCasingInFileNames": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+  },
+  "include": [
+    "src/**/*",
+    "test/**/*.ts",
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+  ]
+}
