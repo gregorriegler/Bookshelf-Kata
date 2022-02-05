@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 
-namespace BookShelve.Db2
+namespace Bookshelf.Db2
 {
 
     public class Db<T>

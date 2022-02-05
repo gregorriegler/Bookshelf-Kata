@@ -1,13 +1,13 @@
 using FluentAssertions;
 using Xunit;
-using BookShelve.Db;
-using BookShelve.Db2;
+using Bookshelf.Db;
+using Bookshelf.Db2;
 
-namespace BookShelve.Tests;
+namespace Bookshelf.Tests;
 
 public class DbTest
 {
-    [Fact (Skip = "dont bother the kata solver")]
+    [Fact]
     public void DbWorks()
     {
         var dbFactory = DbFactory.getInstance();
@@ -24,7 +24,7 @@ public class DbTest
         db.findAll().Should().BeEmpty();
     }
 
-    [Fact (Skip = "dont bother the kata solver")]
+    [Fact]
     public void Db2Works()
     {
         var db = new Db2.Db<string>();

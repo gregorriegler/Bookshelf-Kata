@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 
-namespace BookShelve.Db
+namespace Bookshelf.Db
 {
     public class DbFactory
     {
