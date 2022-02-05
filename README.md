@@ -26,7 +26,7 @@ We would like to be able to skim the books we have added so far.
 Add a feature that allows us to retrieve all books that were stored on the Bookshelf.
 
 ### Step 3
-Lets add more spice to the Bookshelf.
+Let's add more spice to the Bookshelf.
 Mark every 10th book you add as an anniversary book.
 
 ### Step 4
