@@ -1,7 +1,7 @@
 import DbFactory from "../src/db/db";
 import Db from "../src/db2/db"
 
-describe('Db', function() {
+xdescribe('Db', function() {
     it('v1', async function () {
         this.timeout(20000); // mocha default timeout is 2000 ms
         let db = await new DbFactory().startDb();
