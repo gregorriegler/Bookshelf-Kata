@@ -49,3 +49,4 @@ Migrate to the new version, it's located in the `db2` package.
 - [Abstract Contract Test](https://blog.thecodewhisperer.com/permalink/writing-contract-tests-in-java-differently)
 - [Abstract Test Cases, 20 Years later](https://blog.thecodewhisperer.com/permalink/abstract-test-cases-20-years-later)
 - [Hexagonal Architecture](https://alistair.cockburn.us/hexagonal-architecture/)
+- [DomainService vs ApplicationService in DDD](https://enterprisecraftsmanship.com/posts/domain-vs-application-services/)
