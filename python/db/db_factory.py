@@ -1,5 +1,4 @@
 import time
-from dataclasses import dataclass
 
 
 class DbFactory:
@@ -19,7 +18,6 @@ class DbFactory:
         time.sleep(3)
         return ret
 
-    @dataclass
     class Db:
         __objects = []
 
