@@ -20,7 +20,6 @@ def test_db1():
     assert db.find_all() == []
 
 
-
 @pytest.mark.skip(reason="dont bother the kata solver")
 def test_db2():
     db = Db()
