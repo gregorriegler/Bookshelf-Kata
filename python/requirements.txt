@@ -1,0 +1,4 @@
+pytest
+pytest-cov
+pytest-mock==3.3.1
+time
