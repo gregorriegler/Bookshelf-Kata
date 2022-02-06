@@ -6,7 +6,6 @@ from db2.db import Db
 
 @pytest.mark.skip(reason="dont bother the kata solver")
 def test_db1():
-    # dddd = DbFactory.Db()
     db_factory = DbFactory.get_instance()
     db = db_factory.start_db()
     assert db.find_all() == []
