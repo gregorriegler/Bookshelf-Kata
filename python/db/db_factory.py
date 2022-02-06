@@ -1,8 +1,8 @@
 import time
+from dataclasses import dataclass
 
 
 class DbFactory:
-
     __instance = None
 
     @classmethod
@@ -12,24 +12,27 @@ class DbFactory:
         return cls.__instance
 
     def start_db(self):
-        return Db()
-
-
-class Db:
-
-    __objects = []
-
-    def __init__(self):
-        time.sleep(7)
-
-    def persist(self, thing):
+        tmp = DbFactory.Db.__init__
+        DbFactory.Db.__init__ = lambda *args, **kwargs: None
+        ret = DbFactory.Db()
+        DbFactory.Db.__init__ = tmp
         time.sleep(3)
-        self.__objects.append(thing)
+        return ret
 
-    def find_all(self):
-        time.sleep(3)
-        return self.__objects
+    @dataclass
+    class Db:
+        __objects = []
 
-    def clear(self):
-        self.__objects.clear()
+        def __init__(self):
+            raise TypeError("Use DbFactory!")
 
+        def persist(self, thing):
+            time.sleep(3)
+            self.__objects.append(thing)
+
+        def find_all(self):
+            time.sleep(3)
+            return self.__objects
+
+        def clear(self):
+            self.__objects.clear()
