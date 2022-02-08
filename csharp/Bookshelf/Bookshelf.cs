@@ -1,5 +1,7 @@
-﻿namespace Bookshelf;
-public class Bookshelf
+﻿namespace Bookshelf
 {
+    public class Bookshelf
+    {
 
+    }
 }

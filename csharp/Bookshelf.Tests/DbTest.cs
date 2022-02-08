@@ -3,40 +3,42 @@ using Xunit;
 using Bookshelf.Db;
 using Bookshelf.Db2;
 
-namespace Bookshelf.Tests;
-
-public class DbTest
+namespace Bookshelf.Tests
 {
-    [Fact (Skip="dont bother the kata solver")]
-    public void DbWorks()
+
+    public class DbTest
     {
-        var dbFactory = DbFactory.getInstance();
-        var db = dbFactory.startDb<string>();
-        db.findAll().Should().BeEmpty();
-        
-        db.persist("test");
-        db.findAll().Should().Equal("test");
-        
-        db.persist("another");
-        db.findAll().Should().Equal("test", "another");
+        [Fact]
+        public void DbWorks()
+        {
+            var dbFactory = DbFactory.GetInstance();
+            var db = dbFactory.startDb<string>();
+            db.FindAll().Should().BeEmpty();
 
-        db.clear();
-        db.findAll().Should().BeEmpty();
-    }
+            db.Persist("test");
+            db.FindAll().Should().Equal("test");
 
-    [Fact (Skip="dont bother the kata solver")]
-    public void Db2Works()
-    {
-        var db = new Db2.Db<string>();
-        db.findAll().Should().BeEmpty();
-        
-        db.save("test");
-        db.findAll().Should().Equal("test");
-        
-        db.save("another");
-        db.findAll().Should().Equal("test", "another");
+            db.Persist("another");
+            db.FindAll().Should().Equal("test", "another");
 
-        db.clear();
-        db.findAll().Should().BeEmpty();
+            db.Clear();
+            db.FindAll().Should().BeEmpty();
+        }
+
+        [Fact]
+        public void Db2Works()
+        {
+            var db = new Db<string>();
+            db.FindAll().Should().BeEmpty();
+
+            db.Save("test");
+            db.FindAll().Should().Equal("test");
+
+            db.Save("another");
+            db.FindAll().Should().Equal("test", "another");
+
+            db.Clear();
+            db.FindAll().Should().BeEmpty();
+        }
     }
 }

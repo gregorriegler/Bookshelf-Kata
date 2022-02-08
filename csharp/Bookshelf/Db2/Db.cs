@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 
@@ -9,34 +7,34 @@ namespace Bookshelf.Db2
     public class Db<T>
     {
 
-        private List<T> objects = new List<T>();
+        private readonly List<T> _objects = new();
 
         public Db()
         {
             Thread.Sleep(2000);
         }
 
-        public void save(T persistable)
+        public void Save(T persistable)
         {
             Thread.Sleep(500);
-            objects.Add(persistable);
+            _objects.Add(persistable);
         }
 
-        public List<T> findAll()
+        public List<T> FindAll()
         {
             Thread.Sleep(500);
-            return objects;
+            return _objects;
         }
 
-        public int count()
+        public int Count()
         {
             Thread.Sleep(500);
-            return objects.Count();
+            return _objects.Count;
         }
 
-        public void clear()
+        public void Clear()
         {
-            objects.Clear();
+            _objects.Clear();
         }
     }
 }
