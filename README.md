@@ -10,37 +10,6 @@ The purpose of this kata is to practice dealing with expensive and hard-to-test 
 - How do we properly abstract and separate the code that is hard to test from the code that is easy to test?
 - And how do we design our tests, so that they assist future refactorings?
 
----
-
-Follow the steps one by one and do not read ahead.
-
-### Step 1 
-There is a database library in the `db` package called `Db` and you don't own it, so you are not allowed to change it either.
-And it is annoyingly slow!
-Program a Bookshelf that can create and store books and use the given database for it.
-For now, books should only have a title.
-It is not necessary to create a UI, CLI, or any other complicated API for this. 
-A simple service class/module/function will do.
-
-### Step 2
-We would like to be able to skim the books we have added so far. 
-Add a feature that allows us to retrieve all books that were stored on the Bookshelf.
-
-### Step 3
-Let's add more spice to the Bookshelf.
-Mark every 10th book you add as an anniversary book.
-
-### Step 4
-We really love our Bookshelf so far. We added so many books, we would like to celebrate that.
-Therefore, every 25th book we add should be marked as a golden anniversary book.
-
-### Step 5
-A new version of `Db` came out. It's much faster, but they renamed the persist function.
-And it has a new feature where you can get the count of stored objects.
-This should help with the anniversary features.
-Migrate to the new version, it's located in the `db2` package.
-
-
 ## Links for further inspiration (Theory, Patterns, Principles)
 
 - [Repository Pattern](https://martinfowler.com/eaaCatalog/repository.html)
