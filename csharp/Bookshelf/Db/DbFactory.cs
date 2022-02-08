@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 
@@ -7,11 +5,11 @@ namespace Bookshelf.Db
 {
     public class DbFactory
     {
-        private static DbFactory instance = new DbFactory();
+        private static readonly DbFactory Instance = new();
 
-        public static DbFactory getInstance()
+        public static DbFactory GetInstance()
         {
-            return instance;
+            return Instance;
         }
 
         private DbFactory()
@@ -19,34 +17,33 @@ namespace Bookshelf.Db
         }
 
         public  Db<T> startDb<T>() {
-            return new Db<T>();
+            return new();
         }
 
         public class Db<T>
         {
+            private readonly List<T> _objects = new();
 
-            private List<T> objects = new List<T>();
-
-            internal protected Db()
+            protected internal Db()
             {
                 Thread.Sleep(7000);
             }
 
-            public void persist(T persistable)
+            public void Persist(T persistable)
             {
                 Thread.Sleep(3000);
-                objects.Add(persistable);
+                _objects.Add(persistable);
             }
 
-            public List<T> findAll()
+            public List<T> FindAll()
             {
                 Thread.Sleep(3000);
-                return objects;
+                return _objects;
             }
 
-            public void clear()
+            public void Clear()
             {
-                objects.Clear();
+                _objects.Clear();
             }
         }
     }
