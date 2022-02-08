@@ -8,7 +8,7 @@ namespace Bookshelf.Tests
 
     public class DbTest
     {
-        [Fact]
+        [Fact (Skip="dont bother the kata solver")]
         public void DbWorks()
         {
             var dbFactory = DbFactory.GetInstance();
@@ -25,7 +25,7 @@ namespace Bookshelf.Tests
             db.FindAll().Should().BeEmpty();
         }
 
-        [Fact]
+        [Fact (Skip="dont bother the kata solver")]
         public void Db2Works()
         {
             var db = new Db<string>();
