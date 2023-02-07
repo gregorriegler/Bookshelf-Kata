@@ -19,7 +19,7 @@ There is a database library in the `db` package called `Db` and you don't own it
 It is annoyingly slow!
 Program a Bookshelf that can create and store books and use the given database for it.
 For now, books should only have a title.
-It is not necessary to create a UI, CLI, or any other complicated API for this. 
+It is not necessary to create a UI, CLI, or any other complicated User Facing Interface for this. 
 A simple service class/module/function will do.
 
 ### Step 2
