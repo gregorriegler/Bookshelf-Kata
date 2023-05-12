@@ -11,7 +11,7 @@ namespace Bookshelf.Tests
         public void DbWorks()
         {
             var dbFactory = DbFactory.GetInstance();
-            var db = dbFactory.startDb<string>();
+            var db = dbFactory.StartDb<string>();
             db.FindAll().Should().BeEmpty();
 
             db.Persist("test");
