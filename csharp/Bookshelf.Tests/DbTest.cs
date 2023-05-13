@@ -6,39 +6,45 @@ using Bookshelf.Db2;
 namespace Bookshelf.Tests
 {
 
-    public class DbTest
+    public class BookshelfTest
     {
-        [Fact (Skip="dont bother the kata solver")]
-        public void DbWorks()
+        [Fact]
+        public void StartsEmpty()
         {
             var dbFactory = DbFactory.GetInstance();
-            var db = dbFactory.startDb<string>();
-            db.FindAll().Should().BeEmpty();
-
-            db.Persist("test");
-            db.FindAll().Should().Equal("test");
-
-            db.Persist("another");
-            db.FindAll().Should().Equal("test", "another");
-
-            db.Clear();
-            db.FindAll().Should().BeEmpty();
+            var db = dbFactory.startDb<Book>();
+            var bookshelf = new Bookshelf(db);
+            
+            var books = bookshelf.GetAll();
+            
+            books.Should().BeEmpty();
         }
-
-        [Fact (Skip="dont bother the kata solver")]
-        public void Db2Works()
+        
+        [Fact]
+        public void RetrievesSingleStoredBook()
         {
-            var db = new Db<string>();
-            db.FindAll().Should().BeEmpty();
+            var dbFactory = DbFactory.GetInstance();
+            var db = dbFactory.startDb<Book>();
+            var book = new Book("Refactoring");
+            db.Persist(book);
+            var bookshelf = new Bookshelf(db);
+            
+            var books = bookshelf.GetAll();
+            
+            books.Should().ContainSingle().Which.Should().BeSameAs(book);
+        }
+        
+        [Fact]
+        public void AddsBook()
+        {
+            var dbFactory = DbFactory.GetInstance();
+            var db = dbFactory.startDb<Book>();
+            var bookshelf = new Bookshelf(db);
+            var book = new Book("Refactoring");
+            
+            bookshelf.Add(book);
 
-            db.Save("test");
-            db.FindAll().Should().Equal("test");
-
-            db.Save("another");
-            db.FindAll().Should().Equal("test", "another");
-
-            db.Clear();
-            db.FindAll().Should().BeEmpty();
+            bookshelf.GetAll().Should().ContainSingle().Which.Should().BeSameAs(book);
         }
     }
 }

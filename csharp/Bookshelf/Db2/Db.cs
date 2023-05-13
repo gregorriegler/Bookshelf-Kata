@@ -11,24 +11,24 @@ namespace Bookshelf.Db2
 
         public Db()
         {
-            Thread.Sleep(2000);
+            //Thread.Sleep(2000);
         }
 
         public void Save(T persistable)
         {
-            Thread.Sleep(500);
+            //Thread.Sleep(500);
             _objects.Add(persistable);
         }
 
         public List<T> FindAll()
         {
-            Thread.Sleep(500);
+            //Thread.Sleep(500);
             return _objects;
         }
 
         public int Count()
         {
-            Thread.Sleep(500);
+            //Thread.Sleep(500);
             return _objects.Count;
         }
 

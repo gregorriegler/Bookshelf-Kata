@@ -26,18 +26,18 @@ namespace Bookshelf.Db
 
             protected internal Db()
             {
-                Thread.Sleep(7000);
+                //Thread.Sleep(7000);
             }
 
             public void Persist(T persistable)
             {
-                Thread.Sleep(3000);
+                //Thread.Sleep(3000);
                 _objects.Add(persistable);
             }
 
             public List<T> FindAll()
             {
-                Thread.Sleep(3000);
+                //Thread.Sleep(3000);
                 return _objects;
             }
 
