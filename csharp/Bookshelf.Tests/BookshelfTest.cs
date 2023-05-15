@@ -29,7 +29,7 @@ namespace Bookshelf.Tests
         public void RetrievesSingleStoredBook()
         {
             var book = new Book("Refactoring");
-            _db.Persist(new Dictionary<string, object>()
+            _db.Persist(new Dictionary<string, object>
             {
                 {"name", "Refactoring"},
                 {"anniversary", false}
