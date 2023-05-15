@@ -12,7 +12,7 @@ public class BookshelfTest
     public BookshelfTest()
     {
         var dbFactory = DbFactory.GetInstance();
-        _db = DbFactory.startDb();
+        _db = dbFactory.StartDb();
     }
 
     [Fact]
