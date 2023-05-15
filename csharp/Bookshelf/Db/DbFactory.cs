@@ -16,26 +16,26 @@ namespace Bookshelf.Db
         {
         }
 
-        public  Db<T> startDb<T>() {
+        public  Db startDb() {
             return new();
         }
 
-        public class Db<T>
+        public class Db
         {
-            private readonly List<T> _objects = new();
+            private readonly List<Dictionary<string,object>> _objects = new();
 
             protected internal Db()
             {
                 Thread.Sleep(1000);
             }
 
-            public void Persist(T persistable)
+            public void Persist(Dictionary<string,object> item)
             {
                 Thread.Sleep(500);
-                _objects.Add(persistable);
+                _objects.Add(item);
             }
 
-            public List<T> FindAll()
+            public List<Dictionary<string,object>> FindAll()
             {
                 Thread.Sleep(500);
                 return _objects;

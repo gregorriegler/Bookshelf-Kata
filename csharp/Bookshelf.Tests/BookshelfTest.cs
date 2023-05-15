@@ -7,12 +7,12 @@ namespace Bookshelf.Tests;
 
 public class BookshelfTest
 {
-    private readonly DbFactory.Db<Dictionary<string, object>> _db;
+    private readonly DbFactory.Db _db;
 
     public BookshelfTest()
     {
         var dbFactory = DbFactory.GetInstance();
-        _db = dbFactory.startDb<Dictionary<string, object>>();
+        _db = dbFactory.startDb();
     }
 
     [Fact]

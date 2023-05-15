@@ -4,17 +4,18 @@ namespace Bookshelf;
 
 public class Bookshelf
 {
-    private readonly DbFactory.Db<Dictionary<string,object>> _db;
+    private readonly DbFactory.Db _db;
     private int _timesAddedABook;
 
-    public Bookshelf(DbFactory.Db<Dictionary<string,object>> db)
+    public Bookshelf(DbFactory.Db db)
     {
         _db = db;
     }
 
     public List<Book> GetAll()
     {
-        return _db.FindAll().ConvertAll(ToBook);
+        Book Converter(Dictionary<string, object> dict) => new((string)dict["name"], (bool)dict["anniversary"]);
+        return _db.FindAll().ConvertAll((Converter<Dictionary<string,object>,Book>)Converter);
     }
 
     public void Add(Book book)
@@ -23,22 +24,13 @@ public class Bookshelf
         {
             book.Anniversary = true;
         }
-        _db.Persist(ToDict(book));
-        _timesAddedABook++;
-    }
 
-    private static Book ToBook(Dictionary<string, object> dict)
-    {
-        return new Book((string)dict["name"], (bool)dict["anniversary"]);
-    }
-
-    private static Dictionary<string, object> ToDict(Book book)
-    {
         var dictionary = new Dictionary<string, object>
         {
             { "name", book.Name },
             { "anniversary", book.Anniversary }
         };
-        return dictionary;
+        _db.Persist(dictionary);
+        _timesAddedABook++;
     }
 }
