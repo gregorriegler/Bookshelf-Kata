@@ -74,4 +74,30 @@ public class BookshelfTest
             }
         );
     }
+    
+    [Fact]
+    public void CountsAddedBooks()
+    {
+        var bookshelf = new Bookshelf(_db);
+        bookshelf.Add(new Book("Book1"));
+        bookshelf.Add(new Book( "Book2"));
+        bookshelf.Add(new Book("Book3"));
+
+        bookshelf.Count().Should().Be(3);
+    }
+    
+    [Fact]
+    public void ProvidesASummary()
+    {
+        var bookshelf = new Bookshelf(_db);
+        bookshelf.Add(new Book("Book1"));
+        bookshelf.Add(new Book( "Book2"));
+        bookshelf.Add(new Book("Book3"));
+        
+        bookshelf.Summary().Should().Be(@"There are 3 books on the shelf.
+Book1
+Book2
+Book3
+");
+    }
 }
