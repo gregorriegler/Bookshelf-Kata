@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using FluentAssertions;
 using Xunit;
 using Bookshelf.Db;
-using Bookshelf.Db2;
 
 namespace Bookshelf.Tests
 {

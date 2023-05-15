@@ -14,8 +14,17 @@ namespace Bookshelf
 
         public List<Book> GetAll()
         {
-            Converter<Dictionary<string,object>,Book> converter = toBook;
-            return _db.FindAll().ConvertAll(converter);
+            return _db.FindAll().ConvertAll(toBook);
+        }
+
+        public void Add(Book book)
+        {
+            if (_timesAddedABook == 4)
+            {
+                book.Anniversary = true;
+            }
+            _db.Persist(toDict(book));
+            _timesAddedABook++;
         }
 
         private static Book toBook(Dictionary<string, object> dict)
@@ -31,16 +40,6 @@ namespace Bookshelf
                 { "anniversary", book.Anniversary }
             };
             return dictionary;
-        }
-
-        public void Add(Book book)
-        {
-            if (_timesAddedABook == 4)
-            {
-                book.Anniversary = true;
-            }
-            _db.Persist(toDict(book));
-            _timesAddedABook++;
         }
     }
 
