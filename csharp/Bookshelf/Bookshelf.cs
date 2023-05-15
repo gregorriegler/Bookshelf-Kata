@@ -33,16 +33,16 @@ public class Bookshelf
         _timesAddedABook++;
     }
 
-    public int Count()
-    {
-        return _db.FindAll().Count;
-    }
-
     public string Summary()
     {
         string summary = "There are " + Count() + " books on the shelf.\n";
         _db.FindAll().ForEach(book => summary += book["name"] + "\n");
         return summary;
+    }
+
+    public int Count()
+    {
+        return _db.FindAll().Count;
     }
 
     private static Book ToBook(Dictionary<string, object> dict) => new((string)dict["name"], (bool)dict["anniversary"]);
