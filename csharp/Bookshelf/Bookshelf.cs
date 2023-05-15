@@ -12,10 +12,9 @@ public class Bookshelf
         _db = db;
     }
 
-    public List<Book> GetAll()
+    public IEnumerable<Book> GetAll()
     {
-        Book Converter(Dictionary<string, object> dict) => new((string)dict["name"], (bool)dict["anniversary"]);
-        return _db.FindAll().ConvertAll((Converter<Dictionary<string,object>,Book>)Converter);
+        return _db.FindAll().ConvertAll(ToBook);
     }
 
     public void Add(Book book)
@@ -33,4 +32,6 @@ public class Bookshelf
         _db.Persist(dictionary);
         _timesAddedABook++;
     }
+
+    private static Book ToBook(Dictionary<string, object> dict) => new((string)dict["name"], (bool)dict["anniversary"]);
 }

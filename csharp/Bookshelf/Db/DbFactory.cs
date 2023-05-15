@@ -16,7 +16,7 @@ namespace Bookshelf.Db
         {
         }
 
-        public  Db startDb() {
+        public static Db startDb() {
             return new();
         }
 
