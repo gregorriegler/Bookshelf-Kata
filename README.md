@@ -15,12 +15,12 @@ The purpose of this kata is to practice dealing with expensive and hard-to-test 
 Follow the steps one by one and do not read ahead.
 
 ### Step 1 
+Program a Bookshelf that can **create and store books** and use the given database for it.
+For now, books should only have a title.
+
 There is a database library in the `db` package called `Db` and you don't own it, so you are not allowed to change it either.
 It is annoyingly slow!
-Program a Bookshelf that can create and store books and use the given database for it.
-For now, books should only have a title.
-It is not necessary to create a UI, CLI, or any other complicated User Facing Interface for this. 
-A simple service class/module/function will do.
+It is not necessary to create a UI, CLI, or any other complicated user facing interface for this. 
 
 ### Step 2
 We would like to be able to skim the books we have added so far. 
