@@ -15,7 +15,7 @@ The purpose of this kata is to practice dealing with expensive and hard-to-test 
 Follow the steps one by one and do not read ahead.
 
 ### Step 1 
-Program a Bookshelf that can **create and store books** and use the given database for it.
+Program a Bookshelf that can **store books** and use the given database for it.
 For now, books should only have a title.
 
 There is a database library in the `db` package called `Db` and you don't own it, so you are not allowed to change it either.
